@@ -1,0 +1,19 @@
+# Source: goodnode/templates/ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'goodnode'
+  name: goodnode
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              serviceName: goodnode
+              servicePort: 80
+      host: goodnode-jx-production.34.123.102.163.nip.io
