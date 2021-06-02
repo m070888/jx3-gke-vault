@@ -5,27 +5,52 @@ spec:
     enabled: false
     schedule: ""
   cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    clusterName: tf-jx-skilled-piranha
     devEnvApprovers:
     - todo
     environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    gke:
+      projectNumber: "1011591079594"
+    project: jx3gke
     provider: gke
     registry: gcr.io
+    zone: us-central1-a
   environments:
   - key: dev
+    owner: m070888
+    repository: jx3-gke-vault
   - key: staging
   - key: production
   ingress:
-    domain: ""
+    domain: 34.123.102.163.nip.io
     externalDNS: false
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
-      production: false
+      production: true
+  kuberhealthy: true
+  pipelineUser:
+    username: m070888
   repository: nexus
   secretStorage: vault
-  vault: {}
+  storage:
+  - name: logs
+    url: gs://logs-tf-jx-skilled-piranha-4d4cadaa8afa
+  - name: reports
+    url: gs://reports-tf-jx-skilled-piranha-4d4cadaa8afa
+  - name: repository
+    url: gs://repository-tf-jx-skilled-piranha-4d4cadaa8afa
+  terraformVault: true
+  vault:
+    bucket: vault-tf-jx-skilled-piranha-4d4cadaa8afa
+    key: crypto-key-tf-jx-skilled-piranha-4d4cadaa8afa
+    keyring: keyring-tf-jx-skilled-piranha-4d4cadaa8afa
+    name: tf-jx-skilled-piranha
+    serviceAccount: tf-jx-skilled-piranha-vt
   webhook: lighthouse
