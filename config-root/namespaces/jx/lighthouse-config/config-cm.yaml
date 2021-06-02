@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - m070888/jx3-gke-vault
-      target_url: http://dashboard-jx.
+      target_url: http://dashboard-jx.34.123.102.163.nip.io
 kind: ConfigMap
 metadata:
   creationTimestamp: null
