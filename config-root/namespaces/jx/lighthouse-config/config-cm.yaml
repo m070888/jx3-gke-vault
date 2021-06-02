@@ -7,6 +7,7 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        m070888/goodnode: true
         m070888/jx3-gke-vault: true
     plank: {}
     pod_namespace: jx
@@ -19,6 +20,7 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        m070888/goodnode: merge
         m070888/jx3-gke-vault: merge
       queries:
       - labels:
@@ -31,6 +33,7 @@ data:
         - needs-rebase
         repos:
         - m070888/jx3-gke-vault
+        - m070888/goodnode
       - labels:
         - updatebot
         missingLabels:
@@ -41,6 +44,7 @@ data:
         - needs-rebase
         repos:
         - m070888/jx3-gke-vault
+        - m070888/goodnode
       target_url: http://dashboard-jx.34.123.102.163.nip.io
 kind: ConfigMap
 metadata:

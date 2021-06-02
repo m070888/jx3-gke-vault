@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: m070888
+    provider: github
+    repository: goodnode
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: m070888-goodnode
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/m070888/goodnode.git
+  org: m070888
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: goodnode
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/m070888/goodnode
