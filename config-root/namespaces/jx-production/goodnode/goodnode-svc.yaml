@@ -1,0 +1,20 @@
+# Source: goodnode/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: goodnode
+  labels:
+    chart: "goodnode-0.0.1"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'goodnode'
+  namespace: jx-production
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app: goodnode-goodnode

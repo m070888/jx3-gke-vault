@@ -18,5 +18,7 @@ releases:
   version: 0.0.1
   name: goodnode
   namespace: jx-production
+  values:
+  - jx-values.yaml
 templates: {}
 renderedvalues: {}
